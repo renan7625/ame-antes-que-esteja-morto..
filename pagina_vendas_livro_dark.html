@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AME ANTES QUE ESTEJA MORTO | O Chamado Para A Guerra</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap');
+        
+        :root {
+            --primary-color: #ff0000;
+            --secondary-color: #1A1A1A;
+            --accent-color: #8B0000;
+            --text-color: #cccccc;
+            --light-text: #f5f5f5;
+            --background: #000000;
+            --dark-background: #0a0a0a;
+            --blood-red: #8B0000;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--background);
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADESURBVGhD7ZjBCcMwEARVih2KS3EpLsWluJRQyqdgkMEgfN7dDszAQpCHPSFkVwghhBBCCDGO+76XUsrr+LRt2z7P8/gUw1gIxkIwFoKxEIyFYCwEYyEYC8FYCMZCMBaCsRCMhWAsBGMhGAvBWAjGQjAWgrEQjIVgLARjIRgLwVgIxkIwFoKxEIyFYCwEYyEYC8FYCMZCMBaCsRCMhWAsBGMhGAvBWAjGQjAWgrEQjIVgLARjIRgLwVgIxkIwFoKxEEIIIYQQvyil/ADTZy43iOEm4QAAAABJRU5ErkJggg==');
+            background-repeat: repeat;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background-color: var(--dark-background);
+            color: var(--light-text);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--primary-color);
+        }
+        
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADESURBVGhD7ZjBCcMwEARVih2KS3EpLsWluJRQyqdgkMEgfN7dDszAQpCHPSFkVwghhBBCCDGO+76XUsrr+LRt2z7P8/gUw1gIxkIwFoKxEIyFYCwEYyEYC8FYCMZCMBaCsRCMhWAsBGMhGAvBWAjGQjAWgrEQjIVgLARjIRgLwVgIxkIwFoKxEIyFYCwEYyEYC8FYCMZCMBaCsRCMhWAsBGMhGAvBWAjGQjAWgrEQjIVgLARjIRgLwVgIxkIwFoKxEEIIIYQQvyil/ADTZy43iOEm4QAAAABJRU5ErkJggg==');
+            opacity: 0.2;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-family: 'Cinzel', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+        
+        .hero h1 span {
+            color: var(--light-text);
+            font-size: 2.5rem;
+            display: block;
+            margin-top: 10px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 0;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: all 0.5s ease;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            background-color: #8B0000;
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+        }
+        
+        /* Book Preview Section */
+        .book-preview {
+            padding: 80px 0;
+            background-color: var(--dark-background);
+            border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+        }
+        
+        .book-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+        }
+        
+        .book-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .book-image img {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 0 30px rgba(255, 0, 0, 0.5);
+            border-radius: 5px;
+        }
+        
+        .book-details {
+            flex: 1;
+        }
+        
+        .book-details h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+        
+        .book-details p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .highlight {
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+            color: var(--light-text);
+            border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+        }
+        
+        .features h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 0;
+            transition: transform 0.3s ease;
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .feature:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        }
+        
+        .feature h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-family: 'Cinzel', serif;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 80px 0;
+            background-color: var(--dark-background);
+            border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+        }
+        
+        .testimonials h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 0;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        /* Author Section */
+        .author {
+            padding: 80px 0;
+            background-color: var(--dark-background);
+            border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+        }
+        
+        .author-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .author-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .author-image img {
+            max-width: 300px;
+            border-radius: 0;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        }
+        
+        .author-bio {
+            flex: 2;
+        }
+        
+        .author-bio h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+        
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+            background-color: var(--secondary-color);
+            border-bottom: 1px solid rgba(255, 0, 0, 0.3);
+        }
+        
+        .faq h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 50px;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 0;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            border-left: 3px solid var(--primary-color);
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--light-text);
+        }
+        
+        /* Call to Action Section */
+        .cta {
+            padding: 100px 0;
+            background-color: var(--dark-background);
+            color: var(--light-text);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADESURBVGhD7ZjBCcMwEARVih2KS3EpLsWluJRQyqdgkMEgfN7dDszAQpCHPSFkVwghhBBCCDGO+76XUsrr+LRt2z7P8/gUw1gIxkIwFoKxEIyFYCwEYyEYC8FYCMZCMBaCsRCMhWAsBGMhGAvBWAjGQjAWgrEQjIVgLARjIRgLwVgIxkIwFoKxEIyFYCwEYyEYC8FYCMZCMBaCsRCMhWAsBGMhGAvBWAjGQjAWgrEQjIVgLARjIRgLwVgIxkIwFoKxEEIIIYQQvyil/ADTZy43iOEm4QAAAABJRU5ErkJggg==');
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--light-text);
+            margin: 30px 0;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+        
+        .price span {
+            text-decoration: line-through;
+            font-size: 1.5rem;
+            color: #999;
+            margin-right: 15px;
+        }
+        
+        .guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 40px 0;
+        }
+        
+        .guarantee-icon {
+            font-size: 3rem;
+            margin-right: 20px;
+            color: var(--primary-color);
+        }
+        
+        .guarantee-text {
+            text-align: left;
+        }
+        
+        .guarantee-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+            color: var(--light-text);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--background);
+            color: var(--text-color);
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 0, 0, 0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .book-container, .author-container {
+                flex-direction: column;
+            }
+            
+            .book-image, .author-image {
+                margin-bottom: 30px;
+            }
+            
+            .features-grid, .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Urgency Elements */
+        .countdown {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            border-radius: 0;
+            margin: 30px auto;
+            max-width: 500px;
+            text-align: center;
+            border: 1px solid var(--primary-color);
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+        }
+        
+        .countdown h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+            font-family: 'Cinzel', serif;
+        }
+        
+        .timer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .timer-item {
+            background-color: var(--primary-color);
+            padding: 10px;
+            border-radius: 0;
+            min-width: 70px;
+        }
+        
+        .timer-number {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        .timer-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        
+        .limited {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 0;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+            font-family: 'Cinzel', serif;
+            letter-spacing: 2px;
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            }
+        }
+        
+        .bonus {
+            background-color: rgba(0, 0, 0, 0.7);
+            border: 1px solid var(--primary-color);
+            padding: 20px;
+            border-radius: 0;
+            margin: 30px 0;
+            box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+        }
+        
+        .bonus h3 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-family: 'Cinzel', serif;
+        }
+        
+        .blood-drip {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 30"><path d="M0,0 L1200,0 L1200,10 C1150,30 1100,15 1050,10 C1000,5 950,20 900,10 C850,0 800,15 750,20 C700,25 650,5 600,15 C550,25 500,5 450,10 C400,15 350,25 300,15 C250,5 200,20 150,10 C100,0 50,15 0,10 Z" fill="%23ff0000"/></svg>');
+            background-size: 100% 100%;
+            z-index: 10;
+        }
+        
+        .raven-icon {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M256,0C114.6,0,0,114.6,0,256s114.6,256,256,256s256-114.6,256-256S397.4,0,256,0z M256,464c-114.7,0-208-93.3-208-208S141.3,48,256,48s208,93.3,208,208S370.7,464,256,464z M368,152c0,13.3-10.7,24-24,24s-24-10.7-24-24s10.7-24,24-24S368,138.7,368,152z M192,152c0,13.3-10.7,24-24,24s-24-10.7-24-24s10.7-24,24-24S192,138.7,192,152z M256,400c-53,0-96-43-96-96h192C352,357,309,400,256,400z" fill="%23ff0000"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        
+        .war-call {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 40px 0;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            animation: flicker 3s infinite alternate;
+        }
+        
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            }
+            20%, 24%, 55% {
+                text-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="limited">O CHAMADO PARA A GUERRA</div>
+            <h1>AME <span>ANTES QUE ESTEJA</span> MORTO</h1>
+            <p>Você foi escolhido. A revolução não espera. O sistema precisa cair, e você é a chave para desencadear o colapso que libertará as mentes aprisionadas.</p>
+            <a href="#comprar" class="cta-button">JUNTE-SE À REVOLUÇÃO AGORA</a>
+        </div>
+    </section>
+    
+    <!-- Book Preview Section -->
+    <section class="book-preview">
+        <div class="container book-container">
+            <div class="book-image">
+                <img src="/home/ubuntu/upload/oficialdolivro.jpg" alt="Capa do livro Ame antes que esteja morto">
+            </div>
+            <div class="book-details">
+                <h2>O Manifesto Que Desafiará O Sistema</h2>
+                <p>Em um mundo onde as correntes invisíveis do sistema nos mantêm presos a uma existência sem propósito, <span class="highlight">"Ame antes que esteja morto"</span> surge como o grito de guerra que despertará sua consciência adormecida.</p>
+                <p>Acompanhe Elisabeth, uma jovem que sofre abusos físicos e psicológicos, enquanto ela descobre seu poder através da filosofia e se une ao misterioso grupo hacker "Os Corvos" para desafiar as estruturas que aprisionam a sociedade.</p>
+                <p>Este não é apenas um romance. É um <span class="highlight">chamado às armas</span> que irá despertar o guerreiro adormecido dentro de você, revelando as correntes invisíveis que limitam sua existência e mostrando o caminho para quebrá-las.</p>
+                <p>Prepare-se para uma jornada que mistura a profundidade de Nietzsche, a crítica social de Bauman e a intensidade emocional dos melhores thrillers psicológicos. <span class="highlight">Você nunca mais será o mesmo.</span></p>
+                <div class="war-call">Os corvos estão chamando. Você responderá?</div>
+                <a href="#comprar" class="cta-button">ACEITAR O CHAMADO</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2>Por Que Você Foi Escolhido Para Esta Guerra</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <h3>Filosofia Como Arma</h3>
+                    <p>Conceitos de Nietzsche, Bauman e o mito de Sísifo são transformados em armas letais contra o sistema, revelando as fraquezas das estruturas que nos aprisionam e fornecendo as ferramentas para destruí-las.</p>
+                </div>
+                <div class="feature">
+                    <h3>Crítica Social Implacável</h3>
+                    <p>Uma análise brutal das estruturas sociais que nos mantêm submissos, desde relacionamentos superficiais até sistemas econômicos opressores, expondo as correntes invisíveis que limitam nossa liberdade.</p>
+                </div>
+                <div class="feature">
+                    <h3>Personagens Em Guerra Interior</h3>
+                    <p>Elisabeth e os demais personagens enfrentam batalhas psicológicas que refletem nossas próprias lutas internas, criando uma conexão visceral que permanece muito além da última página.</p>
+                </div>
+                <div class="feature">
+                    <h3>Narrativa Que Desperta</h3>
+                    <p>Uma história que combina suspense, drama psicológico e reflexão filosófica, mantendo você completamente imerso enquanto desperta para as verdades ocultas que o sistema tenta esconder.</p>
+                </div>
+                <div class="feature">
+                    <h3>Revolução Como Destino</h3>
+                    <p>Descubra como pequenos atos de rebeldia podem desencadear transformações devastadoras, tanto pessoais quanto coletivas, inspirando você a se tornar o agente do caos necessário para a mudança.</p>
+                </div>
+                <div class="feature">
+                    <h3>Amor Como Ato Revolucionário</h3>
+                    <p>Redefina o que significa amar em uma era de conexões superficiais e descartáveis, descobrindo que o verdadeiro amor é o ato mais revolucionário possível em um mundo que tenta nos manter isolados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>Relatos Dos Primeiros Guerreiros</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"Este livro não é apenas uma leitura, é uma experiência transformadora. A forma como a filosofia é entrelaçada com a narrativa me fez perceber as correntes invisíveis que me prendiam. Agora vejo o mundo com outros olhos."</p>
+                    <div class="testimonial-author">— M.A., Professor de Filosofia</div>
+                </div>
+                <div class="testimonial">
+                    <p>"Comecei a ler esperando apenas uma história interessante e terminei com uma nova perspectiva sobre minha própria existência. A jornada de Elisabeth é brutal, mas profundamente libertadora. Um chamado às armas que não pode ser ignorado."</p>
+                    <div class="testimonial-author">— C.S., Psicóloga</div>
+                </div>
+                <div class="testimonial">
+                    <p>"A crítica social é devastadora e necessária. 'Ame antes que esteja morto' expõe as contradições do nosso tempo com uma clareza que poucos autores conseguem alcançar. Perturbador, visceral e absolutamente essencial."</p>
+                    <div class="testimonial-author">— R.M., Jornalista</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Author Section -->
+    <section class="author">
+        <div class="container author-container">
+            <div class="author-image">
+                <!-- Placeholder for author image -->
+                <img src="https://via.placeholder.com/300x300/000000/FF0000?text=RENAN+RUAN" alt="Renan Ruan Vilas Boas">
+            </div>
+            <div class="author-bio">
+                <h2>O Engenheiro do Colapso: Renan Ruan Vilas Boas</h2>
+                <p>Conhecido por sua visão crítica e provocadora da sociedade contemporânea, Renan Ruan Vilas Boas emergiu como uma das vozes mais autênticas e desafiadoras da nova geração de pensadores brasileiros.</p>
+                <p>Através de seu canal no YouTube "AZAEL — O ENGENHEIRO DO COLAPSO" e agora com seu primeiro romance, ele tem desafiado milhares de pessoas a questionar as estruturas que limitam nosso potencial humano e a buscar uma existência mais autêntica e livre.</p>
+                <p>"Ame antes que esteja morto" é a materialização de sua filosofia em forma narrativa, unindo anos de estudo filosófico com uma sensibilidade literária única que captura a essência dos dilemas humanos contemporâneos e convoca os leitores para uma revolução inevitável.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="faq">
+        <div class="container">
+            <h2>Perguntas Dos Recrutados</h2>
+            <div class="faq-item">
+                <div class="faq-question">Este livro é apenas para quem já conhece filosofia?</div>
+                <div class="faq-answer">Não. Os conceitos filosóficos são apresentados como armas acessíveis a qualquer guerreiro disposto a lutar, independentemente de seu conhecimento prévio. A revolução não exige diplomas, apenas coragem.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">O livro contém cenas fortes ou perturbadoras?</div>
+                <div class="faq-answer">Sim. A obra aborda temas como abuso psicológico e físico, críticas sociais contundentes e situações emocionalmente intensas. A verdade raramente é confortável, e este livro não foi escrito para confortar, mas para despertar.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Quanto tempo leva para a entrega?</div>
+                <div class="faq-answer">Para versões físicas, o prazo de entrega é de 7 a 15 dias úteis, dependendo da sua localização. A versão digital (e-book) é entregue imediatamente após a confirmação do pagamento.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Este livro tem alguma relação com o canal "AZAEL — O ENGENHEIRO DO COLAPSO"?</div>
+                <div class="faq-answer">Sim, o livro expande e aprofunda muitos dos conceitos filosóficos e críticas sociais apresentados no canal, oferecendo uma experiência mais imersiva e visceral através da narrativa ficcional. É o próximo passo para quem busca se aprofundar na revolução.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">Posso devolver o livro se não gostar?</div>
+                <div class="faq-answer">Sim, oferecemos garantia de satisfação de 30 dias. Se você não sentir que foi desafiado e transformado pela obra, basta entrar em contato conosco para um reembolso completo. Mas saiba que poucos retornam depois de aceitar o chamado.</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Call to Action Section -->
+    <section class="cta" id="comprar">
+        <div class="cta-content container">
+            <h2>O Tempo Para Agir É Agora</h2>
+            <p>Não espere até que seja tarde demais para despertar, para lutar, para viver autenticamente.</p>
+            
+            <div class="countdown">
+                <h3>O CHAMADO ENCERRA EM</h3>
+                <div class="timer">
+                    <div class="timer-item">
+                        <div class="timer-number">02</div>
+                        <div class="timer-label">Dias</div>
+                    </div>
+                    <div class="timer-item">
+                        <div class="timer-number">18</div>
+                        <div class="timer-label">Horas</div>
+                    </div>
+                    <div class="timer-item">
+                        <div class="timer-number">45</div>
+                        <div class="timer-label">Minutos</div>
+                    </div>
+                    <div class="timer-item">
+                        <div class="timer-number">33</div>
+                        <div class="timer-label">Segundos</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price">
+                <span>R$ 79,90</span> R$ 49,68
+            </div>
+            
+            <div class="bonus">
+                <h3>ARMAMENTO EXCLUSIVO</h3>
+                <p>Adquirindo agora, você também recebe o e-book "Manifesto dos Corvos: Manual de Guerra Contra o Sistema" — um complemento exclusivo que aprofunda os conceitos filosóficos do romance e fornece as táticas práticas para iniciar sua própria revolução interior.</p>
+            </div>
+            
+            <a href="#" class="cta-button">ACEITAR O CHAMADO PARA A GUERRA</a>
+            
+            <div class="guarantee">
+                <div class="guarantee-icon">✓</div>
+                <div class="guarantee-text">
+                    <h3>Garantia de Transformação de 30 Dias</h3>
+                    <p>Se você não sentir que sua perspectiva foi desafiada e transformada, devolvemos seu dinheiro integralmente. Sem perguntas. Mas saiba que poucos retornam depois de ver a verdade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Renan Ruan Vilas Boas — O ENGENHEIRO DO COLAPSO. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+    
+    <script>
+        // Simple countdown timer
+        function updateCountdown() {
+            const now = new Date();
+            const day = now.getDate();
+            const hours = 23 - now.getHours();
+            const minutes = 59 - now.getMinutes();
+            const seconds = 59 - now.getSeconds();
+            
+            document.querySelector('.timer-item:nth-child(1) .timer-number').textContent = String(2).padStart(2, '0');
+            document.querySelector('.timer-item:nth-child(2) .timer-number').textContent = String(hours).padStart(2, '0');
+            document.querySelector('.timer-item:nth-child(3) .timer-number').textContent = String(minutes).padStart(2, '0');
+            document.querySelector('.timer-item:nth-child(4) .timer-number').textContent = String(seconds).padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+    </script>
+</body>
+</html>
